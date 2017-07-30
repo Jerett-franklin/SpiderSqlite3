@@ -3,6 +3,10 @@ import hexdump
 import os
 import subprocess
 
+def hello():
+    print "Hello"
+
+
 def db_connect(dbname):
     #sqlite3 connections
     try:
@@ -41,7 +45,7 @@ def retrive_image(self, db, tablename, pk_column, pk, image_column, imagename):
     #query for execution 
     query = "select quote(%s) from %s where %s='%s' limit 1 offset 0;"%(image_column,tablename,pk_column,pk)   
     #command 
-    command = ''' echo "%s" | sqlite3 '%s' | tr -d "X'" | xxd -r -p > %s ''' %(query,db,imagename)
+    command = ''' echo "%s" | sqlite3 db | tr -d "X'" | xxd -r -p > %s ''' %(query,imagename)
     print command
     
     #execute command 
