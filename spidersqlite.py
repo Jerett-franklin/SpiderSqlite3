@@ -39,7 +39,7 @@ def insert_image(tablename, row_details, dbname, dbcolumn, conn_cur):
        
     conn_cur[0].commit()
 
-def retrive_image(self, db, tablename, pk_column, pk, image_column, imagename):  
+def retrive_image(db, tablename, pk_column, pk, image_column, imagename):  
   
     #retrive image as blob
     #query for execution 
